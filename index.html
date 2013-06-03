@@ -57,6 +57,35 @@
 				})
 				.attr("width", w / dataset.length - barPadding);
 
+            svg.selectAll("text")
+                    .data(dataset)
+                    .enter()
+                    .append("text")
+                    .text(function(d){
+                        return d;
+                    })
+                    .attr("x", function(d, i){
+                        return i * (w / dataset.length) +  (w / dataset.length - barPadding) / 2 ;
+                    })
+                    .attr("y", function(d){
+                        return h - (d*4) + 15;
+                    })
+                    .attr("font-family", "sans-serif")
+                    .attr("font-size", "11px")
+                    .attr("text-anchor", "middle")
+                    .attr("fill", "white");
+
+            var bidataset = [
+            [5, 20],[480, 90], [250, 50], [100, 33], [330, 95],
+                    [410, 12], [475, 44], [25, 67], [85, 21], [220, 88]
+            ];
+
+
+
+
+
+
+
 
 			
 		</script>
